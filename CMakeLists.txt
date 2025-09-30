@@ -12,7 +12,6 @@ find_package(catkin REQUIRED COMPONENTS
   control_msgs
   geometry_msgs
   nav_msgs
-  play_motion_msgs
   rospy
   trajectory_msgs
 )
@@ -192,7 +191,10 @@ include_directories(
 ## Mark other files for installation (e.g. launch and bag files, etc.)
 
 catkin_install_python(PROGRAMS
-  scripts/base_drive.py
+  scripts/base_then_arm.py
+  scripts/head_look_point.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
 #############
 ## Testing ##
 #############
@@ -205,3 +207,4 @@ catkin_install_python(PROGRAMS
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
