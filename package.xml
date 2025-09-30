@@ -7,7 +7,11 @@
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->
   <!-- <maintainer email="jane.doe@example.com">Jane Doe</maintainer> -->
+<<<<<<< HEAD
   <maintainer email="root@todo.todo">root</maintainer>
+=======
+  <maintainer email="mahika@todo.todo">mahika</maintainer>
+>>>>>>> sync from container
 
 
   <!-- One license tag required, multiple allowed, one license per tag -->
