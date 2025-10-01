@@ -69,7 +69,7 @@
   <exec_depend>nav_msgs</exec_depend>
   <exec_depend>rospy</exec_depend>
   <exec_depend>trajectory_msgs</exec_depend>
-
+  <exec_depend>play_motion_msgs</exec_depend>
   <!-- The export tag contains other, unspecified, tags -->
   <export>
     <!-- Other tools can request additional information be placed here -->

@@ -14,6 +14,7 @@ find_package(catkin REQUIRED COMPONENTS
   nav_msgs
   rospy
   trajectory_msgs
+  play_motion_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -193,6 +194,7 @@ include_directories(
 catkin_install_python(PROGRAMS
   scripts/base_then_arm.py
   scripts/head_look_point.py
+  scripts/play_motion_demo.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 #############
