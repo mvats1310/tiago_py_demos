@@ -1,0 +1,34 @@
+Setting up docker continer 
+
+Terminal 1 
+
+remove any running docker container 
+docker rm tiago_tutorials
+docker run -it --network host --name tiago_tutorials   --env DISPLAY=$DISPLAY   -v /tmp/.X11-unix:/tmp/.X11-unix:rw   -v ~/.ssh:/root/.ssh:ro   --privileged   palroboticssl/tiago_tutorials:noetic
+mkdir -p /root/dev_ws/src
+cd /root/dev_ws/src
+git clone https://github.com/Unity-Technologies/ROS-TCP-Endpoint.git
+source /opt/ros/noetic/setup.bash
+source /tiago_public_ws/devel/setup.bash
+source /root/dev_ws/devel/setup.bash
+roslaunch ros_tcp_endpoint endpoint.launch
+
+Terminal 2
+docker exec -it tiago_tutorials bash
+source /tiago_public_ws/devel/setup.bash
+rostopic echo /cmd_vel
+
+expected outcome 
+linear: 
+  x: 0.20000000298023224
+  y: 0.0
+  z: 0.0
+angular: 
+  x: 0.0
+  y: 0.0
+  z: 0.0
+---
+
+Terminal 3 (GAZEBO) 
+docker exec -it tiago_tutorials bash
+roslaunch tiago_gazebo tiago_gazebo.launch end_effector:=pal-gripper public_sim:=true world:=empty
